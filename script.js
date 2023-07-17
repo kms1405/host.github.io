@@ -134,7 +134,7 @@ async function  showFavorite() {
         <div class="card-body">
             <h5 class="card-title">${hero.name}</h5>
     
-            <a onclick={getCharacter(this.id)} id=v${hero.id} class="btn btn-primary" value=${hero.id} >View desc</a>
+            <a onclick={getCharacter(this.id)} id=v${hero.id} class="btn btn-primary" value=${hero.id} >View</a>
             <a onclick={likeCharacter(this.id)} id=sl${hero.id} class="btn btn-secondary"
              style = "background-color : ${getBgColourUsingId(hero.id)};" value=${hero.id} > Like</a>
         </div>`
