@@ -17,7 +17,7 @@ function fetchdynamic(keyword) {
     const timestamp = Date.now().toString();
     const hash = generateHash(timestamp);
     // console.log(hash);
-  const apiUrl = `http://gateway.marvel.com//v1/public/characters?nameStartsWith=${keyword}&ts=${timestamp}&apikey=${publicKey}&hash=${hash}`;
+  const apiUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${keyword}&ts=${timestamp}&apikey=${publicKey}&hash=${hash}`;
 
   fetch(apiUrl)
     .then(response => response.json())
@@ -37,7 +37,7 @@ function fetchdynamic(keyword) {
 function initialFetch() {
     const timestamp = Date.now().toString();
     const hash = generateHash(timestamp);
-  const apiUrl = `http://gateway.marvel.com//v1/public/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`;
+  const apiUrl = `http://gateway.marvel.com/v1/public/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`;
 
   fetch(apiUrl)
     .then(response => response.json())
@@ -59,7 +59,7 @@ function getCharacter(event_id) {
     }
     const timestamp = Date.now().toString();
     const hash = generateHash(timestamp);
-  const apiUrl = `http://gateway.marvel.com//v1/public/characters/${event_id}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`;
+  const apiUrl = `http://gateway.marvel.com/v1/public/characters/${event_id}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`;
 
   fetch(apiUrl)
     .then(response => response.json())
@@ -87,7 +87,7 @@ async function fetchAllFavoriteCharacters(){
     let alldata = []
     for (element of value){
         if (element){
-            const apiUrl = `http://gateway.marvel.com//v1/public/characters/${element}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`;
+            const apiUrl = `http://gateway.marvel.com/v1/public/characters/${element}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`;
             try {
                 const response = await fetch(apiUrl);
                 const data = await response.json();
@@ -175,7 +175,7 @@ const searchResults = document.getElementById("searchResults");
 async function fetchData(searchTerm) {
     const timestamp = Date.now().toString();
     const hash = generateHash(timestamp);
-    const apiUrl = `http://gateway.marvel.com//v1/public/characters?nameStartsWith=${searchTerm}&ts=${timestamp}&apikey=${publicKey}&hash=${hash}`;
+    const apiUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchTerm}&ts=${timestamp}&apikey=${publicKey}&hash=${hash}`;
 
   const response = await fetch(apiUrl)
   const data = await response.json();
